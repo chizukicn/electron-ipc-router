@@ -31,7 +31,13 @@ var IpcRouter = function () {
                 var callback = function callback(rs) {
                     return event.sender.send(name, rs);
                 };
-                process(args, { callback: callback }).then(callback);
+                var promise = process(args, { callback: callback });
+                if (!!promise) {
+                    if (!promise instanceof Promise) {
+                        promise = Promise.resolve(promise);
+                    }
+                    promise.then(callback);
+                }
             });
         };
 

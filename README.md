@@ -4,9 +4,9 @@ Installation
 --
 
 > 
-    npm install html-webpack-ext-cdn-plugin --save-dev
+    npm install electron-ipc-router --save-dev
     or
-    yarn add html-webpack-ext-cdn-plugin ---dev
+    yarn add electron-ipc-router ---dev
 
 Use
 --

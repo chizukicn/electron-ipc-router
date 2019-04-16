@@ -11,8 +11,13 @@ export default class IpcRouter {
             let process=routes[name]
             ipc.on(name, (event, args) => {
                 let callback = rs => event.sender.send(name, rs)
-                process(args, {callback})
-                    .then(callback)
+                let promise=process(args, {callback})
+                if(!!promise){
+                    if(!promise instanceof Promise){
+                        promise=Promise.resolve(promise)
+                    }
+                    promise.then(callback)
+                }
             })
         }
         this.ipc = ipc
