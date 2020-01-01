@@ -1,23 +1,20 @@
 {
   "name": "electron-ipc-router",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "license": "MIT",
   "author": "Kritsu",
   "description": "promisify electron ipc-router",
-  "main": "dist/index.js",
+  "main": "index.js",
+  "types": "types/index.d.ts",
   "keywords": [
     "electron",
     "ipc",
     "router"
   ],
-  "scripts": {
-    "build": "babel ./src --presets babel-preset-env --out-dir ./dist"
-  },
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "q": "^1.5.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
   }
 }
